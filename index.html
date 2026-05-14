@@ -1772,7 +1772,23 @@ var LNKS={
   'ca7':{amz:'https://www.amazon.sa/s?k=Thermaltake+Tower+900+Full+Tower+E-ATX&i=electronics',egg:'https://www.newegg.com/p/pl?q=Thermaltake+Tower+900+Full+Tower&N=100007707',ali:'https://www.aliexpress.com/wholesale?catId=44&SearchText=Thermaltake+Tower+900+Full+Tower+EATX'},
 };
 
+
+var DIRECT_AMZ={
+  'c24':'https://www.amazon.sa/-/en/AMD-9950X-Processor-Architecture-Graphics/dp/B0D6NNRBGP/',
+  'c13':'https://www.amazon.sa/-/en/Mavark-285K-Unlocked-Processor-Motherboard/dp/B0DMXB5DVP/',
+  'g19':'https://www.amazon.sa/-/en/ASUS-GeForce-Graphics-RTX5090-DisplayPort/dp/B0DTHV8THW/',
+  'g17':'https://www.amazon.sa/-/en/RTX-4090-Vulcan-OC-24GB/dp/B0GHN3557B/',
+  'r10':'https://www.amazon.sa/-/en/CORSAIR-VENGEANCE-6000MHz-CL40-50-50-96-Computer/dp/B0FNRKDQZ9/',
+  'r9':'https://www.amazon.sa/-/en/G-SKILL-Trident-CL30-36-36-96-Desktop-Computer/dp/B0CJXBCQ7P/',
+  's9':'https://www.amazon.sa/-/en/Crucial-Internal-Compatible-Desktop-Software/dp/B0DZ5XQNLM/',
+  'm10':'https://www.amazon.sa/-/en/MSI-MEG-X670E-Motherboard-ATX/dp/B0B6Q4X5NF/',
+  'ca6':'https://www.amazon.sa/-/en/Lian-Li-Compact-Mid-Tower-Computer/dp/B0DJPV8XG3/',
+  'co5':'https://www.amazon.sa/-/en/Lian-Li-Compact-Mid-Tower-Computer/dp/B0DJPV8XG3/',
+  'p5':'https://www.amazon.sa/-/en/Seasonic-Focus-GX-1000-Full-Modular-Compatible/dp/B0DLFKRJDC/',
+};
+
 function getLnk(id,store){
+  if(store==='amz'&&DIRECT_AMZ[id]) return DIRECT_AMZ[id];
   if(LNKS[id]&&LNKS[id][store]) return LNKS[id][store];
   var p=find(id);if(!p)return '#';
   var q=encodeURIComponent(p.nameEn);
